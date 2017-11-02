@@ -1,30 +1,13 @@
 var MVC = (function(){
-	// 观察者模式 第一版本  dom0级事件绑定方式 只能够添加一个事件函数
-	// var Observer = (function(){
-	//   	var observer = { 
-	// 	  };
-	// 	  return {
-	//       on :function(name,fn){
-	//       	observer[name] = fn;
-	//       	console.log("添加了一个"+name+"事件");
-	//       	console.log(observer)
-	//       },
-	//       emit:function(name,data){
-	//       	if(observer[name]){
-	//       		observer[name](data)
-	//       	}
-	//       }
-	// 	  }
-	// 	})(); 
-  // 观察者模式 第二版本 dom2级事件绑定方式 可以添加多个函数 
+	
+  // 观察者模式 dom2级事件绑定方式 可以添加多个函数 
 	var Observer = (function(){
 	  // 保护内部变量
 	  var _observer = { 
 	  }	
 	  // 返回接口
 	  return {
-	     // 接口定义的发布消息的方法 每当发布一个新的name 就会将_observer中开辟一个新的属性 属性值是数组 数组中的每一项是存的方法。
-	  	// 每当发布一个已经存在的name就会往已经存在的数组中添加进去
+	     // 接口定义的发布消息的方法
 	     on:function(name,fn){
 	          // 判断是否已经是数组
 	     	if(_observer[name] instanceof Array){
@@ -34,7 +17,7 @@ var MVC = (function(){
 	          // 如果不是数组则初始化为数组
 	     	_observer[name] = [fn];
 	  	},
-	     // 接口定义的订阅消息的方法 订阅的必须是已经发布的消息。 因为已经发布了所以一定是数组。那么数组中的每一项是函数。就循环数组并让数组中的函数执行。执行的时候就可以传递参数了。
+	     // 接口定义的订阅消息的方法 订阅的必须是已经发布的消息。
 	  	emit:function(name,data){
 	  	  if(_observer[name]){
 	  	  	for(var i =0;i<_observer[name].length;i++){
@@ -95,9 +78,9 @@ var MVC = (function(){
 	}
 	// 发送ajax的轮子
 	function sendAjax(url,method,data,callback){
-    // 第一步 初始化xhr对象
+    //  初始化xhr对象
     var xhr = new XMLHttpRequest();
-    // 第二步 定义事件
+    //  定义事件
     xhr.onreadystatechange = function(){
         // 判断 如果是最后一次执行
         if(xhr.readyState === 4){
@@ -105,21 +88,21 @@ var MVC = (function(){
         }
     }
     if(method.toLowerCase()==="get"){
-        // 第三步 填参数 
+        //  填参数 
         xhr.open(method,url+"?"+data,true); 
-        // 第四步 发送
+        // 发送
         xhr.send(); 
     }else if(method.toLowerCase()==="post"){
         xhr.open(method,url,true);
-        // 先设置一下请求头 
+        // 设置请求头 
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded"); 
-        // 第四步 如果是post请求 一定要将数据放在send中作为参数传递
+        // 如果是post请求 要将数据放在send中作为参数传递
         xhr.send(data);
     } 
   }
  	// 存储数据
 	var M = (function(){
-		// _M就是一个存值器
+		// _M是一个存值器
 		var _M = { 
 		}
 		// 返回的是一个接口 接口提供两个方法 一个是存储数据 一个是获取数据
@@ -208,7 +191,7 @@ var MVC = (function(){
 	})()
 	// 解析多级嵌套关系的模板
 	var format = function(tpl,dir){
-		// 第一步 定义正则表达式
+		//  定义正则表达式
 		var regexp = /<%((\w+\.){0,}\w+)%>/g;
 		return tpl.replace(regexp,function(match,$1){
 			var pathArr = $1.split("."); 
