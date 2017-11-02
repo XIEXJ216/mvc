@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="height:10000px">
+  <div id="header">
+  	<div class="container"></div>
+  </div>
+  <div id="home">
+  	<div class="container">
+  		
+  	</div>
+  </div>
+  <!-- 引入seajs以及插件 -->
+  <script type="text/javascript" src="js/sea.js"></script>
+  <script type="text/javascript" src="js/seajs-preload.js"></script>
+  <script type="text/javascript" src="js/seajs-css.js"></script>
+  <script type="text/javascript">
+  	// 定义根目录
+  	seajs.config({
+  		base: '/modules',
+  		// 预加载MVC
+  		preload: ['/js/MVC']
+  	})
+  	// 引入入口文件
+  	seajs.use(['index', 'reset.css'], function(index) {
+  		// 启动应用程序
+  		index()
+  	})
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+#home{
+	margin-top:50px; 
+	position: relative;
+	z-index: 6;
+
+}
+#home .container{
+  background: #EEE;
+}

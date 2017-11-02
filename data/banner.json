@@ -1,0 +1,23 @@
+{
+	"errno":0,
+	"data":[
+		{
+			"src":"lib/images/art/bg1.jpg"
+		},
+		{
+			"src":"lib/images/art/bg2.jpg"
+		},
+		{
+			"src":"lib/images/art/bg3.jpg"
+		},
+		{
+			"src":"lib/images/art/bg4.jpg"
+		},
+		{
+			"src":"lib/images/art/bg5.jpg"
+		},
+		{
+			"src":"lib/images/art/bg6.jpg"
+		}
+	]
+}

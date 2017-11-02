@@ -1,0 +1,78 @@
+#works{
+	width: 900px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+#works .top{
+   padding-bottom: 20px;
+}
+#works .top h3{
+	float: left;
+}
+#works .btns{
+	float: right;
+	height:30px;
+	width: 100px; 
+	text-align: center;
+	color:#ccc;
+
+}
+#works .btns .leftBtn{
+	float: left;
+	width: 30%;
+	background: #000;
+	border-radius: 50%;
+  height:30px;
+  line-height: 30px;
+}
+#works .btns .leftBtn:hover,#works .btns .rightBtn:hover{
+	color:#FFF;
+	cursor: pointer;
+}
+#works .btns .rightBtn{
+	margin-left:10%;
+	float: left;
+	width:30%;
+	background: #000;
+  height:30px;
+  line-height: 30px;
+	border-radius: 50%;
+}  
+#works .bottom {
+	position: relative;
+	width: 100%;
+	overflow: hidden; 
+	height: 140px;
+}
+#works .bottom ul{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 120%;
+}
+#works .bottom li{
+	float: left;
+	position: relative;
+	width: 164px;
+	margin-right:16px;
+}
+#works .bottom li span{
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	transition:all 1s ease 0s;
+}
+#works .bottom li:hover span{
+	opacity: 1;
+	background: rgba(0,0,0,.3);
+}
+#works .bottom li span a{
+	display: block;
+	width: 35px;
+	height: 35px;
+	margin: 47.5px auto;
+	background: url("/style/images/icon-more.png"); 
+}
